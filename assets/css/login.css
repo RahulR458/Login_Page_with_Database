@@ -1,0 +1,26 @@
+/* login */
+
+#login{
+    height: 100vh;
+  } 
+  
+  .center-div {
+    padding-top: 10%;
+    background-color: #cecece;
+    background-size: cover;
+  }
+  
+  .container-login{
+    border: 1px solid black;
+    padding: 5px; 
+  
+  }
+
+  .form-group span{
+    font-size: 14px;
+    color: red;
+}
+
+.mt-5 {
+  margin-top: 0rem!important;
+}

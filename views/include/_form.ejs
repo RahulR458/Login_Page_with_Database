@@ -1,17 +1,29 @@
 <!-- form handling -->
-<form method="POST" id="add_user">
+<form action="/api/users" method="POST" id="add_user">
     <div class="new-user">
         <div class="form-group">
-            <label for="name" class="text-light">Name</label>
+            <label for="name" class="text-dark">Name</label>
             <input type="hidden" name="id" value="">
-            <input type="text" name="name" value="" placeholder="Mark Stoenis">
+            <input type="text" name="name" value="" placeholder="Full Name" id="user-name" onkeyup="validateName()">
+            <span id="name-error"></span>
         </div>
         <div class="form-group">
-            <label for="Email" class="text-light">Email</label>
-            <input type="text" name="email" value="" placeholder="example@gmail.com">
+            <label for="Email" class="text-dark">Email</label>
+            <input type="text" name="email" value="" placeholder="Email" id="user-email" onkeyup="validateEmail()">
+            <span id="email-error"></span>
         </div>
         <div class="form-group">
-            <label for="gender" class="text-light">Gender</label>
+            <label for="Password" class="text-light">Password</label>
+            <input type="text" name="password" value="" placeholder="Password" id="user-password" onkeyup="validatePassword()">
+            <span id="password-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword" class="text-light">Password</label>
+            <input type="text" name="Password" value="" placeholder="Confirm password" id="user-confirmPassword" onkeyup="validateConfirmPassword()">
+            <span id="confirmPassword-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="gender" class="text-dark">Gender</label>
             <div class="radio inline">
                 <input type="radio" id="radio-2" name="gender" value="Male">
                 <label for="radio-2" class="radio-label">Male</label>
@@ -20,22 +32,26 @@
                 <input type="radio" id="radio-3" name="gender" value="Female">
                 <label for="radio-3" class="radio-label">Female</label>
             </div>
+            <span id="gender-error"></span>
         </div>
         <div class="form-group">
-            <label for="status"  class="text-light">Status</label>
+            <label for="status" class="text-dark">Status</label>
             <div class="radio inline">
-                <input type="radio" id="radio-4" name="gender" value="Active">
+                <input type="radio" id="radio-4" name="status" value="Active">
                 <label for="radio-4" class="radio-label">Active</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-5" name="gender" value="Inactive">
+                <input type="radio" id="radio-5" name="status" value="Inactive">
                 <label for="radio-5" class="radio-label">Inactive</label>
             </div>
+            <span id="status-error"></span>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn text-dark update">Save</button>
+            <button type="submit" class="btn text-light update" onclick="return validateForm()">Save</button>
         </div>
-         
+         <div class="form-group">
+            <span id="submit-error"></span>
+         </div>
     </div>
 </form> 

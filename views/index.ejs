@@ -5,16 +5,25 @@
 
 
 <!-- Main Site -->
-     <main id="site-main">
+     <main id="site-main" style="margin-top: 20px;">
         <div class="container">
-            <div class="box-nav d-flex justify-between">
+            <div class="box-nav">
                 <a href="/add-user" class="border-shadow">
                     <span class="text-gradient">New User <i class="fa fa-user"></i></span>
                 </a>
+            
+            <!-- <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Submit</button> -->
+            <div class="search-container" style="float: right;">
+                <form action="">
+                  <input type="text" placeholder="Search.." name="search" style="padding-top: 5px;padding-bottom:5px; padding-left: 3px; border: none;">
+                  <button type="submit"><i class="fa fa-search" style="padding-top: 6px;padding-bottom:7px; padding-left: 5px;padding-right: 5px; background-color: rgb(0, 244, 253);"></i></button>
+                </form>
+              </div>
             </div>
-
             <!-- form handling -->
             <form action="/" method="POST">
+                
             <table class="table">
                 <thead class="thead-dark">
                     <tr>

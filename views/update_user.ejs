@@ -16,51 +16,67 @@
             <h2 class="text-dark">Update User</h2>
             <span class="text-light">Use the below form to update an account</span>
         </div>
-
+    
         <!-- Add user form -->
         <!-- form handling -->
-<form method="POST" id="update_user">
+<form method="" id="update_user">
     <div class="new-user">
         <div class="form-group">
             <label for="name" class="text-light">Name</label>
-            <input type="hidden" name="id" value="">
-            <input type="text" name="name" value="" placeholder="Mark Stoenis">
+            <input type="hidden" name="id" value="<%=user._id %>">
+            <input type="text" name="name" value="<%=user.name %>" placeholder="Full Name" id="user-name" onkeyup="validateName()">
+            <span id="name-error"></span>
         </div>
         <div class="form-group">
             <label for="Email" class="text-light">Email</label>
-            <input type="text" name="email" value="" placeholder="example@gmail.com">
+            <input type="text" name="email" value="<%=user.email %>" placeholder="Email" id="user-email" onkeyup="validateEmail()">
+            <span id="email-error"></span>
         </div>
         <div class="form-group">
-            <label for="gender" class="text-light">Gender</label>
+            <label for="Password" class="text-light">Password</label>
+            <input type="text" name="password" value="<%=user.password %>" placeholder="Password" id="user-password" onkeyup="validatePassword()">
+            <span id="password-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="ConfirmPassword" class="text-light">Confirm Password</label>
+            <input type="text" name="Password" value="<%=user.confirmPassword %>" placeholder="Confirm password" id="user-confirmPassword" onkeyup="validateConfirmPassword()">
+            <span id="confirmPassword-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="gender" class="text-dark">Gender</label>
             <div class="radio inline">
-                <input type="radio" id="radio-2" name="gender" value="Male">
+                <input type="radio" id="radio-2" name="gender" value="Male" <%=user.gender == 'Male'?'Checked':'' %>>
                 <label for="radio-2" class="radio-label">Male</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-3" name="gender" value="Female">
+                <input type="radio" id="radio-3" name="gender" value="Female" <%=user.gender == 'Female'?'Checked':'' %>>
                 <label for="radio-3" class="radio-label">Female</label>
             </div>
+            <span id="gender-error"></span>
         </div>
         <div class="form-group">
-            <label for="status"  class="text-light">Status</label>
+            <label for="status"  class="text-dark">Status</label>
             <div class="radio inline">
-                <input type="radio" id="radio-4" name="gender" value="Active">
+                <input type="radio" id="radio-4" name="status" value="Active" <%=user.status == 'Active'?'Checked':'' %>>
                 <label for="radio-4" class="radio-label">Active</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-5" name="gender" value="Inactive">
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%=user.status == 'Inactive'?'Checked':'' %>>
                 <label for="radio-5" class="radio-label">Inactive</label>
             </div>
+            <span id="status-error"></span>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn text-dark update">Save</button>
+            <button type="submit" class="btn text-dark update" onclick="return validateForm()">Save</button>
         </div>
-         
+        <div class="form-group">
+            <span id="submit-error"></span>
+         </div>
     </div>
 </form> 
 
-    </div>
+</div>
  </main>
 
 
