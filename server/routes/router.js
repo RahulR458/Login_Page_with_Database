@@ -3,7 +3,9 @@ const route = express.Router()
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
+const authPage = require('../middlewares/authMidleware')
 
+const Permissions = [1,0];
 /*
 @description Root Route
 @method GET/
@@ -22,12 +24,14 @@ route.get('/update-user',services.update_user)
 // route.post('/update-user',services.update_user)
 
 route.get('/login',services.login_user)
+route.post('/login-user',services.user_login)
 
 route.get('/dashboad',services.dashboad_user)
 
 route.get('/logout',services.logout_admin)
 
 route.get('/user-page',services.page_user)
+
 
 //API
 route.post('/api/users',controller.create);

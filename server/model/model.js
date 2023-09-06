@@ -12,10 +12,14 @@ var schema = new mongoose.Schema({
     },
     password:{
         type:String,
-        require:true
+        required:true
     },
     gender:String,
-    status:String
+    status:String,
+    role:{
+        type:Number,
+        default:0
+    }
 })
 
 const Userdb = mongoose.model('userdb',schema);

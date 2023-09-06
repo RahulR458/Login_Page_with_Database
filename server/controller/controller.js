@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 var Userdb = require('../model/model');
-const { use } = require('../routes/router');
+// const { use } = require('../routes/router');
 
 //create and save new user
 
