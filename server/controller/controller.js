@@ -79,7 +79,7 @@ exports.update=(req,res)=>{
     Userdb.findByIdAndUpdate(id,req.body,{useFindAndModify:false})
         .then(data=>{
             if(!data){
-                res.status(400).ssend({message:'Cannot Update user with ${id}.Maybe user not found'})
+                res.status(400).send({message:'Cannot Update user with ${id}.Maybe user not found'})
             }else{
                 res.send(data)
             }

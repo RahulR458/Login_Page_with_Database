@@ -14,7 +14,7 @@ function validateName(){
         return false
     }
     if(name.length < 3){
-        nameError.innerHTML = "Invalid Name";
+        nameError.innerHTML = "Minimun 3 characters required";
         document.getElementById('user-name').style.border = '1px solid red'
         return false
     }
@@ -54,7 +54,7 @@ function validatePassword(){
         document.getElementById("user-password").style.border = '1px solid red';
         return false;
     }if(password.length < 8){
-        passwordError.innerHTML = "Password must be at least 8 characters long";
+        passwordError.innerHTML = "Password must be at least 8 characters";
         document.getElementById('user-password').style.border = '1px solid red';
         return false;
     }
@@ -68,7 +68,7 @@ function validateConfirmPassword(){
     const password = document.getElementById("user-password").value;
     const confirmPassword = document.getElementById("user-confirmPassword").value;
     if(password !== confirmPassword){
-        confirmPasswordError.innerHTML = "Re-enter Password";
+        confirmPasswordError.innerHTML = "Password is not matched";
         document.getElementById('user-confirmPassword').style.border = '1px solid red';
         return false;
     }

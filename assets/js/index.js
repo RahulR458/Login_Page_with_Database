@@ -28,7 +28,7 @@ $("#update_user").submit(function(event){
     })
 })   
 
-if(window.location.pathname == "/"){
+if(window.location.pathname == "/user-table"){
     $ondelete = $(".table tbody td a.delete")
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
@@ -38,7 +38,7 @@ if(window.location.pathname == "/"){
             "method":"DELETE",
         } 
 
-        if(confirm("DO you really eant to delete this record?")){
+        if(confirm("Do you really want to delete this record?")){
             $.ajax(request).done(function(response){
                 alert("Data Deleted Successfully");
                 location.reload()
